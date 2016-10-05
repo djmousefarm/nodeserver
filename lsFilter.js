@@ -14,3 +14,4 @@ function showList(callback) {
 function hasExt(value) {if(value.endsWith("."+ext)) {return value}};
 function lister() {filteredList.filter(hasExt).forEach(function(element){console.log(element)})};
 showList(lister);
+module.exports = showList(callback);

@@ -1,4 +1,5 @@
 var fs = require('fs');
+var myModule = require('./lsFilter.js');
 var fileText = undefined;
 function getFile(callback) {
 	 fs.readFile(process.argv[2],'utf8', function fileReady(err,myFile) {
