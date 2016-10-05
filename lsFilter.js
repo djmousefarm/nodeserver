@@ -11,6 +11,6 @@ function showList(callback) {
 		callback();
 	});
 };
-function hasExt(value) {if(value.endsWith(ext)) {return value}};
+function hasExt(value) {if(value.endsWith("."+ext)) {return value}};
 function lister() {filteredList.filter(hasExt).forEach(function(element){console.log(element)})};
 showList(lister);
