@@ -11,5 +11,5 @@ function getFile(callback) {
 			}	
 		})
 	}
-function output() {console.log(fileText.split('\n').length-1};
+function output() {console.log(fileText.split('\n').length-1)};
 getFile(fileText);
