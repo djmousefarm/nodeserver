@@ -12,5 +12,5 @@ function showList(callback) {
 	});
 };
 function hasExt(value,ext) {if(value.endsWith(ext)) {return value}};
-function lister() {filteredList.filter(hasExt(filteredList,ext)).forEach(function(element){console.log(element)})};
+function lister() {filteredList.filter(hasExt(ext)).forEach(function(element){console.log(element)})};
 showList(lister);
