@@ -1,4 +1,13 @@
 var fs = require('fs');
-// by telling it to read the file as utf8 you no longer need to convert from a buffer object to a string!
-var num = fs.readFileSync(process.argv[2],'utf8').split('\n').length-1;
-console.log(num);
+var num = undefined;
+function getFile(callback) {
+	 fs.readFile(process.argv[2],'utf8', function callback(err,myFile) {
+		if (err) {
+			//console.log(process.argv[2] + " is not ready yet!);
+			} else {
+			num = myFile.split('\n').length-1;
+			callback();
+			}	
+		});
+function output() {console.log(num)};
+getFile(num);
