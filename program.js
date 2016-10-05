@@ -6,7 +6,7 @@ function getFile(callback) {
 			//console.log(process.argv[2] + " is not ready yet!);
 			} else {
 			//console.log(myFile);
-			fileText = myFile1;
+			fileText = myFile;
 			callback();
 			}	
 		})
