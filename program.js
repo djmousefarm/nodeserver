@@ -5,6 +5,7 @@ function getFile(callback) {
 		if (err) {
 			//console.log(process.argv[2] + " is not ready yet!);
 			} else {
+			console.log(myFile);
 			num = myFile.split('\n').length-1;
 			callback();
 			}	
