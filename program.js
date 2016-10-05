@@ -1,7 +1,7 @@
 var fs = require('fs');
 var fileText = undefined;
 function getFile(callback) {
-	 fs.readFile(process.argv[2],'utf8', function callback(err,myFile) {
+	 fs.readFile(process.argv[2],'utf8', function fileReady(err,myFile) {
 		if (!err) {
 			fileText = myFile;
 			callback();
