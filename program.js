@@ -8,6 +8,7 @@ function getFile(callback) {
 			num = myFile.split('\n').length-1;
 			callback();
 			}	
-		});
+		}
+	}
 function output() {console.log(num)};
 getFile(num);
