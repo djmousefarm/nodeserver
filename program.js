@@ -8,8 +8,8 @@ function getFile(callback) {
 			//console.log(myFile);
 			fileText = myFile;
 			callback();
-			}	
-		})
-	}
-function output() {console.log(fileText.split('\n').length-1)};
-getFile(fileText);
+			};	
+		});
+	};
+function input() {console.log(fileText.split('\n').length-1)};
+getFile(input);
