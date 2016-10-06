@@ -8,7 +8,9 @@ http.get(url, function callback(response) {
 	response.pipe(bl(function(err,data) {
 			if (err)
 				console.error('Pipe error : ' + err)
-			console.log(data.toString())
+			var d = data.toString()
+			console.log(d.split('\n').length-1);
+			console.log(d.toString())
 			}))
 	})
 
