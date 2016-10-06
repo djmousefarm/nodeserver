@@ -9,7 +9,7 @@ http.get(url, function callback(response) {
 			if (err)
 				console.error('Pipe error : ' + err)
 			var d = data.toString()
-			console.log(d.split('\n').length-1);
+			console.log(d.length);
 			console.log(d.toString())
 			}))
 	})
