@@ -15,3 +15,4 @@ function getFile(callback) {
 	};
 function input() {console.log(fileText.split('\n').length-1)};
 getFile(input);
+

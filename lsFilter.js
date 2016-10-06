@@ -1,17 +1,22 @@
 var fs = require('fs');
+var path = require('path');
 var dir = process.argv[2];
 var ext = process.argv[3];
-var filteredList = undefined;
-function showList(callback) {
+
+module.exports = {
+function () {
 	fs.readdir(dir, function listReady(err, list) {
 		if (err) {
-			console.error(err);
+			return console.error(err);
+			//console.error(err);
 		}
-		filteredList = list;
-		callback();
+		list.forEach(function(element) {
+			if (path.extName(element)===ext) {console.log(element)}});
+		//callback(null,list);
 	});
-};
-function hasExt(value) {if(value.endsWith("."+ext)) {return value}};
-function lister() {filteredList.filter(hasExt).forEach(function(element){console.log(element)})};
-showList(lister);
-module.exports = showList(callback);
+}
+}
+/*function lister() {
+	filteredList.forEach(function(element){
+		if (path.extName(element)===ext) {console.log(element)}})};
+module.exports = showList(lister);*/
