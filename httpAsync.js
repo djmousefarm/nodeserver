@@ -1,6 +1,9 @@
 var http = require('http')
 var bl = require('bl')
 var urls = process.argv.slice(2)
+var count = 0;
+var out = [];
+
 function httpget(urls) {
 		urls.forEach(function(url) {
 			http.get(url, function callback(response) {
@@ -11,9 +14,12 @@ function httpget(urls) {
 						if (err) {
 							console.error('Pipe error : ' + err)
 							}
-						console.log(data.toString())
+						out[count]=data.toString()
+						count++
+						//console.log(data.toString())
+						if (count===3) out.forEach(function(line) {console.log(line)})
 						}))
-		
+				
 				})
 		})
 	}
