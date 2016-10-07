@@ -4,6 +4,12 @@ var urls = process.argv.slice(2)
 var count = 0;
 var out = [];
 
+function output(lines) {
+	for (var i = 0; i < lines.length; i++) {
+		console.log(lines[i])
+		}
+	}
+
 function httpget(urls) {
 		urls.forEach(function(url) {
 			http.get(url, function callback(response) {
@@ -17,7 +23,7 @@ function httpget(urls) {
 						out[count]=data.toString()
 						count++
 						//console.log(data.toString())
-						if (count===3) out.forEach(function(line) {console.log(line)})
+						if (count===3) output(out)
 						}))
 				
 				})
