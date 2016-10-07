@@ -4,9 +4,9 @@ var urls = process.argv.slice(2)
 var count = 0;
 var out = [];
 
-function output(lines) {
-	for (var i = 0; i < lines.length; i++) {
-		console.log(lines[i])
+function output() {
+	for (var i = 0; i < out.length; i++) {
+		console.log(out[i])
 		}
 	}
 
@@ -17,14 +17,15 @@ function httpget(urls) {
 		
 					if (response.error) 
 						console.error('Error with ' + url + ' returning ' + response.error)
+					
 					response.pipe(bl(function(err,data) {
-						if (err) {
+						if (err)
 							console.error('Pipe error : ' + err)
-							}
-						out[count]=data.toString()
+				
+						out[j]=data.toString()
 						count++
-						//console.log(data.toString())
-						if (count===3) output(out)
+						
+						if (count===3) output()
 						}))
 			
 				})
