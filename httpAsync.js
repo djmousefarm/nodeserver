@@ -10,26 +10,24 @@ function output() {
 		}
 	}
 
-function httpget(urls) {
-		for (var j = 0; j < urls.length; j++) {
 
-			http.get(urls[j], function callback(response) {
-		
-					if (response.error) 
-						console.error('Error with ' + url + ' returning ' + response.error)
-					
-					response.pipe(bl(function(err,data) {
-						if (err)
-							console.error('Pipe error : ' + err)
+for (var j = 0; j < urls.length; j++) {
+	http.get(urls[j], function callback(response) {
+
+		if (response.error) 
+			console.error('Error with ' + url + ' returning ' + response.error)
 				
-						out[j]=data.toString()
-						count++
-						
-						if (count===3) output()
-						}))
+		response.pipe(bl(function(err,data) {
+			if (err)
+				console.error('Pipe error : ' + err)
 			
-				})
-			}
-		}
+			out[j]=data.toString()
+			count++
+					
+			if (count===3) output()
+			}))
+	
+		})
+	}
 
-httpget(urls)
+
