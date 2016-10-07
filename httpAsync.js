@@ -10,10 +10,14 @@ function output() {
 		}
 	}
 
-
 for (var j = 0; j < urls.length; j++) {
-	http.get(urls[j], function callback(response) {
+	httpget(j)
+}
 
+function httpget(index) {
+
+	http.get(urls[index], function callback(response) {
+		//console.log('j within async ' + j)
 		if (response.error) 
 			console.error('Error with ' + url + ' returning ' + response.error)
 				
@@ -21,7 +25,8 @@ for (var j = 0; j < urls.length; j++) {
 			if (err)
 				console.error('Pipe error : ' + err)
 			
-			out[j]=data.toString()
+			//console.log('j at output ' + j)
+			out[index]=data.toString()
 			count++
 					
 			if (count===3) output()
